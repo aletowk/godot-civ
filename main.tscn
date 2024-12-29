@@ -11,26 +11,33 @@ offset = Vector2(100, 0)
 transform = Transform2D(1, 0, 0, 1, 100, 0)
 script = ExtResource("1_7wk5b")
 
-[node name="CityName" type="Label" parent="UI/CivPanel"]
+[node name="CivName" type="Label" parent="UI/CivPanel"]
 offset_left = 34.0
 offset_top = 85.0
 offset_right = 114.0
 offset_bottom = 108.0
-text = "City Name"
+text = "Name"
 metadata/_edit_use_anchors_ = true
 
-[node name="CityDescription" type="Label" parent="UI/CivPanel"]
+[node name="CivDescription" type="Label" parent="UI/CivPanel"]
 offset_left = 34.0
 offset_top = 106.0
 offset_right = 157.0
 offset_bottom = 171.0
-text = "City Description"
 metadata/_edit_use_anchors_ = true
 
-[node name="Start" type="Button" parent="UI/CivPanel"]
+[node name="Add" type="Button" parent="UI/CivPanel"]
+anchors_preset = -1
+anchor_right = -0.0625
 offset_left = 34.0
-offset_top = 155.0
+offset_top = 48.0
 offset_right = 157.0
-offset_bottom = 186.0
-text = "Start"
+offset_bottom = 79.0
+text = "+"
 metadata/_edit_use_anchors_ = true
+
+[node name="GridContainer" type="GridContainer" parent="UI/CivPanel"]
+offset_left = 39.0
+offset_top = 211.0
+offset_right = 79.0
+offset_bottom = 251.0

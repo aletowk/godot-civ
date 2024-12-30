@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://ksopru35nsa6"]
+
+[ext_resource type="Script" path="res://scenes/map/location.gd" id="1_dvbq5"]
+
+[node name="Location" type="ColorRect"]
+custom_minimum_size = Vector2(10, 10)
+offset_right = 10.0
+offset_bottom = 10.0
+color = Color(0, 0.878431, 0, 1)
+script = ExtResource("1_dvbq5")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

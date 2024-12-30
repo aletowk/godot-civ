@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://doq7w6pju6bxm"]
+
+[ext_resource type="Script" path="res://scenes/map/map.gd" id="1_ya17x"]
+
+[node name="Map" type="Control"]
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 600.0
+offset_bottom = 400.0
+script = ExtResource("1_ya17x")
+width = 3
+height = 3
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

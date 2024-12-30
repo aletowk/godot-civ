@@ -16,29 +16,35 @@ offset_bottom = 40.0
 [node name="HBoxName" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Name" type="Label" parent="VBoxContainer/HBoxName"]
+[node name="name" type="Label" parent="VBoxContainer/HBoxName"]
 layout_mode = 2
 text = "Name"
 
-[node name="Name_entry" type="Label" parent="VBoxContainer/HBoxName"]
+[node name="value" type="Label" parent="VBoxContainer/HBoxName"]
 layout_mode = 2
 
 [node name="HBoxFruits" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Fruits" type="Label" parent="VBoxContainer/HBoxFruits"]
+[node name="name" type="Label" parent="VBoxContainer/HBoxFruits"]
 layout_mode = 2
 text = "Fruits"
 
-[node name="Fruits_entry" type="Label" parent="VBoxContainer/HBoxFruits"]
+[node name="number" type="Label" parent="VBoxContainer/HBoxFruits"]
+layout_mode = 2
+
+[node name="growth" type="Label" parent="VBoxContainer/HBoxFruits"]
 layout_mode = 2
 
 [node name="HBoxAnimals" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Animals" type="Label" parent="VBoxContainer/HBoxAnimals"]
+[node name="name" type="Label" parent="VBoxContainer/HBoxAnimals"]
 layout_mode = 2
 text = "Animals"
 
-[node name="Animals_entry" type="Label" parent="VBoxContainer/HBoxAnimals"]
+[node name="number" type="Label" parent="VBoxContainer/HBoxAnimals"]
+layout_mode = 2
+
+[node name="growth" type="Label" parent="VBoxContainer/HBoxAnimals"]
 layout_mode = 2

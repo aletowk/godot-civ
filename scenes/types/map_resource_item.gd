@@ -1,4 +1,4 @@
-class_name ResourceItem extends Node
+class_name MapResourceItem extends Node
 
 enum ResourceType {
 	FRUITS,

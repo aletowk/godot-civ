@@ -1,9 +1,9 @@
 extends ColorRect
 
-var fruits: ResourceItem
-var animals: ResourceItem
+var fruits: MapResourceItem
+var animals: MapResourceItem
 
-func init(_fruits: ResourceItem, _animals: ResourceItem) -> void:
+func init(_fruits: MapResourceItem, _animals: MapResourceItem) -> void:
 	fruits = _fruits
 	animals = _animals
 

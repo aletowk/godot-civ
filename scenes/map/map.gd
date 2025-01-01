@@ -12,8 +12,8 @@ func _ready() -> void:
 
 			loc.name = str(Vector2i(i,j))
 			loc.init(
-				ResourceItem.new(ResourceItem.ResourceType.FRUITS, 10, 1),
-				ResourceItem.new(ResourceItem.ResourceType.ANIMALS, 3, 1)
+				MapResourceItem.new(MapResourceItem.ResourceType.FRUITS, 10, 1),
+				MapResourceItem.new(MapResourceItem.ResourceType.ANIMALS, 3, 1)
 			)
 			$GridContainer.set("theme_override_constants/v_separation", loc.size.x/2)
 			$GridContainer.set("theme_override_constants/h_separation", loc.size.y/2)

@@ -2,26 +2,42 @@ class_name Group extends Resource
 
 var name: String
 var player: bool
-var resources: GroupResources
+var resources: Dictionary = {}
 var workers: Array[Worker]
 var unemployed: int
 #var location: ??? 
 
-func init(_name: String, _player: bool, _resources: GroupResources):
+func init(_name: String, _player: bool, _resources: Dictionary):
 	name = _name
 	player = _player
-	resources = _resources
+
+	# * Resources initialization
+	var to_init = ResourceItem.ResourceType.keys()
+	# Init Passed resources
+	for res in _resources:
+		if res in ResourceItem.ResourceType:
+			resources[res] = ResourceItem.new(ResourceItem.ResourceType[res], _resources[res])
+			to_init.erase(res)
+	# Init other resources to 0
+	for res in to_init:
+		resources[res] = ResourceItem.new(ResourceItem.ResourceType[res], 0)
+	
 	workers = []
-	unemployed = resources.people.amount
+	unemployed = resources["PEOPLE"].amount
 
 func consume() -> void:
 	# Use the consumables
 	# Food
-	var food_to_get = resources.people.amount
-	resources.food.amount -= food_to_get
-	if resources.food.amount < 0:
+	var people_res: ResourceItem = resources["PEOPLE"]
+	var food_res: ResourceItem = resources["FOOD"]
+	var food_to_get = people_res.amount
+	food_res.amount -= food_to_get
+	if food_res.amount < 0:
 		# TODO: remove people randomly
-		resources.food.amount = 0
+		food_res.amount = 0
 
 func _to_string() -> String:
-	return "Group %s:\n\tResources:\n%s"%[name,resources]
+	var res_str = ""
+	for res in resources:
+		res_str += "%s: %d, "%[res, resources[res].amount]
+	return "Group %s:\nResources:\n%s"%[name,res_str]

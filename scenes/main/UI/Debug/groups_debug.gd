@@ -4,6 +4,7 @@ class_name  GroupsDebug
 var groups: Array[Group]
 var init_pos: Vector2
 var mouse_over: bool = false
+var ui: UI
 
 func _ready() -> void:
 	init_pos = position
@@ -27,10 +28,22 @@ func _process(delta: float) -> void:
 			position -= diff
 			init_pos = position
 
-func init(_groups: Array[Group]):
+func init(_groups: Array[Group], _ui: UI):
+	ui = _ui
 	groups = _groups
 	for group in groups:
 		var butt = Button.new()
 		butt.name = group.name
 		butt.text = group.name
 		$Panel/ScrollContainer/VBoxContainer.add_child(butt)
+		butt.pressed.connect(popup_group_info.bind(group))
+
+
+func popup_group_info(_grp : Group):
+	var grp_info_node_name = "GroupeInfo_" + _grp.name
+	if !ui.get_node(grp_info_node_name):
+		var grp_info = preload("res://scenes/main/UI/components/group_info.tscn").instantiate()
+		grp_info.init(_grp)
+		ui.add_child(grp_info)
+
+

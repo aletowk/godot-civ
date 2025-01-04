@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3 uid="uid://6ukycnyt4gsx"]
+
+[ext_resource type="Script" path="res://scenes/main/UI/components/group_info.gd" id="1_4su4y"]
+
+[node name="GroupInfo" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4su4y")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.0
+offset_top = -39.0
+offset_right = 67.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxRoot" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxRoot"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="PanelContainer/VBoxRoot/HBoxContainer"]
+layout_mode = 2
+text = "<name>"
+
+[node name="CloseButton" type="Button" parent="PanelContainer/VBoxRoot/HBoxContainer"]
+layout_mode = 2
+text = "Close"
+
+[node name="VBoxResourcesMain" type="VBoxContainer" parent="PanelContainer/VBoxRoot"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxRoot/VBoxResourcesMain"]
+layout_mode = 2
+
+[node name="Resources" type="Label" parent="PanelContainer/VBoxRoot/VBoxResourcesMain/HBoxContainer"]
+layout_mode = 2
+text = "Resources
+"
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxRoot/VBoxResourcesMain/HBoxContainer"]
+layout_mode = 2
+text = "Show"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/VBoxRoot/VBoxResourcesMain"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxRoot/VBoxResourcesMain/ScrollContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="PanelContainer/VBoxRoot/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxRoot/VBoxResourcesMain/HBoxContainer/Button" to="." method="_on_show_resources_button_pressed"]

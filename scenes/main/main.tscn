@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://267dv68cm0nq"]
+[gd_scene load_steps=3 format=3 uid="uid://267dv68cm0nq"]
 
 [ext_resource type="Script" path="res://scenes/main/game_engine.gd" id="1_eqygl"]
+[ext_resource type="Script" path="res://scenes/main/ui.gd" id="2_6abt1"]
 
 [node name="Main" type="Node2D"]
 
@@ -12,9 +13,10 @@ script = ExtResource("1_eqygl")
 [node name="UI" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 640.0
-offset_bottom = 480.0
+offset_right = 1152.0
+offset_bottom = 648.0
 size_flags_horizontal = 0
+script = ExtResource("2_6abt1")
 
 [node name="Run" type="Button" parent="CanvasLayer/UI"]
 layout_mode = 1
@@ -29,4 +31,18 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "Run"
 
+[node name="Debug" type="VBoxContainer" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="ShowGroups" type="Button" parent="CanvasLayer/UI/Debug"]
+layout_mode = 2
+text = "ShowGroups"
+
 [connection signal="pressed" from="CanvasLayer/UI/Run" to="GameEngine" method="_on_run_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/Debug/ShowGroups" to="CanvasLayer/UI" method="_on_show_groups_pressed"]

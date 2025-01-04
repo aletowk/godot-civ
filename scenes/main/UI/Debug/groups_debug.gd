@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 		var diff = init_pos - get_global_mouse_position()
 		if diff != Vector2.ZERO:
 			# Click is registered in ProjectSettings>InputMap
-			position -= diff + size/2
+			position -= diff
 			init_pos = position
 
 func init(_groups: Array[Group]):

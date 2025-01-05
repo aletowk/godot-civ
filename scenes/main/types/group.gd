@@ -3,7 +3,7 @@ class_name Group extends Resource
 var name: String
 var player: bool
 var resources: Dictionary = {}
-var workers: Array[Worker]
+var workers: Workers
 var unemployed: int
 #var location: ??? 
 
@@ -22,8 +22,7 @@ func init(_name: String, _player: bool, _resources: Dictionary):
 	for res in to_init:
 		resources[res] = ResourceItem.new(ResourceItem.ResourceType[res], 0)
 	
-	workers = []
-	unemployed = resources["PEOPLE"].amount
+	workers = Workers.new(resources["PEOPLE"].amount)
 
 func consume() -> void:
 	# Use the consumables

@@ -20,10 +20,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -67.0
-offset_top = -39.0
-offset_right = 67.0
-offset_bottom = 61.0
+offset_left = -121.5
+offset_top = -154.5
+offset_right = 121.5
+offset_bottom = 154.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -35,6 +35,7 @@ layout_mode = 2
 
 [node name="Name" type="Label" parent="PanelContainer/VBoxRoot/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "<name>"
 
 [node name="CloseButton" type="Button" parent="PanelContainer/VBoxRoot/HBoxContainer"]
@@ -50,6 +51,7 @@ layout_mode = 2
 
 [node name="Resources" type="Label" parent="PanelContainer/VBoxRoot/VBoxResourcesMain/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Resources
 "
 
@@ -57,11 +59,43 @@ text = "Resources
 layout_mode = 2
 text = "Show"
 
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/VBoxRoot/VBoxResourcesMain/HBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="Button2" type="Button" parent="PanelContainer/VBoxRoot/VBoxResourcesMain/HBoxContainer"]
+layout_mode = 2
+text = "+"
+
 [node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/VBoxRoot/VBoxResourcesMain"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxRoot/VBoxResourcesMain/ScrollContainer"]
+layout_mode = 2
+
+[node name="VBoxWorkersMain" type="VBoxContainer" parent="PanelContainer/VBoxRoot"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxRoot/VBoxWorkersMain"]
+layout_mode = 2
+
+[node name="Workers" type="Label" parent="PanelContainer/VBoxRoot/VBoxWorkersMain/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Workers
+"
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxRoot/VBoxWorkersMain/HBoxContainer"]
+layout_mode = 2
+text = "Show"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/VBoxRoot/VBoxWorkersMain"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxRoot/VBoxWorkersMain/ScrollContainer"]
 layout_mode = 2
 
 [connection signal="pressed" from="PanelContainer/VBoxRoot/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

@@ -59,14 +59,6 @@ text = "Resources
 layout_mode = 2
 text = "Show"
 
-[node name="LineEdit" type="LineEdit" parent="PanelContainer/VBoxRoot/VBoxResourcesMain/HBoxContainer"]
-layout_mode = 2
-text = "0"
-
-[node name="Button2" type="Button" parent="PanelContainer/VBoxRoot/VBoxResourcesMain/HBoxContainer"]
-layout_mode = 2
-text = "+"
-
 [node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/VBoxRoot/VBoxResourcesMain"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2

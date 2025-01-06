@@ -1,26 +1,16 @@
 extends ColorRect
 
-var fruits: MapResourceItem
-var animals: MapResourceItem
+var resources: Array[MapResourceItem] = []
 
-func init(_fruits: MapResourceItem, _animals: MapResourceItem) -> void:
-	fruits = _fruits
-	animals = _animals
+func init(_resources: Array[MapResourceItem]) -> void:
+	if resources != []:
+		resources = []
+	resources = _resources
 
 func _on_mouse_entered() -> void:
-	print("Entered:", self.name, self.fruits, self.animals)
-	var info = preload("res://scenes/assets/location_info.tscn").instantiate()
-	info.name = "info_panel"
-	info.get_node("VBoxContainer/HBoxName/value").text = self.name
-	info.get_node("VBoxContainer/HBoxFruits/number").text = str(self.fruits.number)
-	info.get_node("VBoxContainer/HBoxFruits/growth").text = "(+%d)"%self.fruits.growth
-	info.get_node("VBoxContainer/HBoxAnimals/number").text = str(self.animals.number)
-	info.get_node("VBoxContainer/HBoxAnimals/growth").text = "(+%d)"%self.animals.growth
-	
-	info.position = get_global_mouse_position()
-	info.show()
-	add_child(info)
+	print("Entered:", name)
+	get_parent().get_parent().show_location_info.emit(name)
 
 func _on_mouse_exited() -> void:
-	print("Exited:", self.name)
+	print("Exited:", name)
 	remove_child(get_node("info_panel"))

@@ -2,6 +2,7 @@ extends Control
 class_name Map
 
 signal show_location_info
+signal hide_location_info
 
 @export var width: int = 5
 @export var height: int = 5
@@ -30,6 +31,7 @@ func _ready() -> void:
 			$GridContainer.add_child(loc)
 
 	connect("show_location_info", _on_show_location)
+	connect("hide_location_info", _on_hide_location)
 
 func _on_show_location(location_name: String) -> void:
 	var child_loc = null
@@ -41,4 +43,7 @@ func _on_show_location(location_name: String) -> void:
 		loc_info_panel.reset()
 		loc_info_panel.init(location_name, child_loc.resources)
 		loc_info_panel.show()
-		loc_info_panel.position = get_global_mouse_position()
+		loc_info_panel.position = get_global_mouse_position() + Vector2(20, 20)
+
+func _on_hide_location():
+	loc_info_panel.hide()

@@ -13,4 +13,4 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	print("Exited:", name)
-	remove_child(get_node("info_panel"))
+	get_parent().get_parent().hide_location_info.emit()

@@ -10,3 +10,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8valj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 46.0
+offset_bottom = 40.0
+
+[node name="Start" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="Run" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Run
+"
+
+[node name="Map" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 41.0
+offset_right = 40.0
+offset_bottom = 81.0
